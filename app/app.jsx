@@ -34,10 +34,18 @@ store.subscribe(() => {
   console.log(' **** New State Change ', state);
 });
 
-store.dispatch(actions.addAddress({
-  addr1: "My address1",
-  addr2: "My address2"
-}));
+console.log('-- Initial State ', store.getState());
+
+// store.dispatch(actions.addAddress({
+//   addr1: "My address1",
+//   addr2: "My address2"
+// }));
+
+store.dispatch(actions.updateCurrentStage("myStage"));
+store.dispatch(actions.updateCurrentStage("anotherStage"));
+store.dispatch(actions.updateCurrentStage("severalStage"));
+store.dispatch(actions.updateCurrentStage("crujienteStage"));
+
 
 /* --- Load any css styling or bootsttrap --- */
 

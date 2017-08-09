@@ -1,7 +1,6 @@
 /* -- node modules --*/
 var React = require('react');
 var {PropTypes} = require('react');
-import { withRouter } from 'react-router-dom'
 var {connect} = require('react-redux');
 var actions = require('actions');
 
@@ -10,69 +9,7 @@ var actions = require('actions');
 * TODO: Pass a function from singupCOntainer to trigger when the form is submitted
 */
 
-/* -- Some quick styling, not ideal --*/
-// const SpaceBetweenDescriptionAndForm = {
-// 	'margin-top': '1em'
-// }
-/*we have another export here to be able to export the raw component for testing
- purposes*/
-
-// class Property extends React.Component {
-// 	 constructor(props) {
-// 		 super(props);
-// 	 }
-// 	 onFormSubmit (e) {
-//  		e.preventDefault();
-// 		console.log('------ Hello dear Tuan -----');
-// 	}
-//
-// 	 render() {
-// 		 return (
-// 			 <div className="space-from-toolbar">
-// 	 				<h1 className="text-left" className="title-style">Create A Property</h1>
-//
-// 	 		 		<h5 className="text-left description" >Let's start by setting up a property for a tenant! First things first, what's the address of your first property? Don't worry, you can always add more properties later!</h5>
-//
-// 	         <form className="sign-up form-style" onSubmit={this.onFormSubmit}>
-// 	 						{/* --- First adreess ---	*/}
-// 	 						<div className="form-group sign-up-group">
-// 	                 <input className="form-control text-in inner-add input-style" type="text" placeholder="ex: 650 Mayfield Rd. Stanford, CA 94309" ref="addr1" />
-// 	 								<span className="label label-default form-label input-label" > Property Address </span>
-// 	             </div>
-// 	 					 {/* --- Second adreess ---	*/}
-// 	 						<div className="form-group sign-up-group">
-// 	 								<input className="form-control text-in input-style" type="text" placeholder="ex: 650B Mayfield Rd. Stanford, CA 94309" ref="addr2"/>
-// 	 								<span className="label label-default form-label monthly-payment">Property Address 2 (optional)</span>
-// 	 						</div>
-// 	            {/* --- Submit button ---	*/}
-// 	 						<button className="btn btn-link btn-sm pull-right next-button " type="submit"  >NEXT </button>
-// 	         </form>
-// 	   </div>
-// 		 );
-// 	 }
-//  }
-//
-// export default Property;
- // const mapDispatchToProps = (dispatch) => {
- //  return {
- // 	 addAddress: () => dispatch(addAddress(addressObject))
- //  }
- // }
- //
- // const mapStateToProps = (state) => {
- //  return state;
- // }
- //
- // export default connect(
- //  mapStateToProps,
- //  mapDispatchToProps
- // )(Property);
-
 var Property = React.createClass({
-	// propTypes: {
-  //       onChange:   React.PropTypes.func
-  //   },
-
 
 	onFormSubmit: function (e) {
 		e.preventDefault();// this prevents the browse from refreshing the whole app.

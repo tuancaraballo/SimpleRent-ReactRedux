@@ -4,26 +4,56 @@
 import { combineReducers } from 'redux'
 
 const propertyInitialState = {
-  addr1: "address 1",
-  addr2: "address 2",
-};
-
-
-
-function propertyReducer(state = propertyInitialState, action){
-  switch(action.type){
-    case 'ADD_PROPERTY':
-    return Object.assign({}, state, {
-          addr1: action.addr1,
-          addr2: action.addr2,
-    });
-    default:
-        return state;
+  addresses: {
+    addr1: "address 1",
+    addr2: "address 2",
   }
 };
 
+
+function propertyReducer(state = {}, action){
+  switch(action.type){
+    case 'ADD_PROPERTY':
+    return Object.assign({}, state, {
+      addresses: {
+        addr1: action.addresses.addr1,
+        addr2: action.addresses.addr2,
+      }
+    });
+    default:
+    return state;
+  }
+};
+
+
+function stagesReducer(state = {}, action) {
+  console.log('----- inside stage reducers', action.type);
+  switch (action.type) {
+    case 'UPDATE_CURRENT_STAGE':
+      return {
+        current_stage : action.stage
+      }
+    case 'ADD_STAGE':
+      if (typeof state.seen_stages  === 'undefined'){
+        return {
+          seen_stages: [action.stage]
+        }
+      }
+      return Object.assign({}, state.seen_stages, {
+        seen_stages:[
+                  ...state.seen_stages,
+                  action.stage,
+        ]
+      });
+    default:
+      return state;
+  }
+}
+
+
 const reducers = combineReducers({
   propertyReducer,
+  stagesReducer,
 });
 
 export default reducers;
