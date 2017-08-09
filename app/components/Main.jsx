@@ -1,5 +1,5 @@
 /*
- *  Description: This is the Main layout where every Container will be displayed
+ * Description: This is the Main layout where every Container will be displayed
  */
 import  React, {PropTypes} from 'react'
 
@@ -7,6 +7,7 @@ class Main extends React.Component {
 	constructor(props) {
 		super(props)
 	}
+
 	render () {
 		return (
 			<div>
@@ -15,4 +16,5 @@ class Main extends React.Component {
 		);
 	}
 }
+
 export default Main;
