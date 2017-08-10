@@ -12,7 +12,7 @@ import React from 'react'
 import {render} from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore, combineReducers } from 'redux'
-import {Route, Router,  hashHistory} from 'react-router'
+import {Route, Router, IndexRoute, hashHistory} from 'react-router'
 
 /* --- actions and store --- */
 var actions = require('actions');
@@ -25,6 +25,7 @@ var Rent = require('Rent').default;
 var BankInfo = require('BankInfo').default;
 var SignUpSuccess =require('SignUpSuccess').default;
 var SignUpContainer = require('SignUpContainer').default;
+var LandingPageContainer = require('LandingPageContainer').default;
 var Main = require('Main').default; // TODO: this is probably unneccessary
 
 let store = createStore(reducers);
@@ -45,11 +46,12 @@ store.dispatch(actions.addAddress({
 
 
 /* --- Load any css styling or bootsttrap --- */
-
+//const css_styleBootstrap = require('styles/signupBootstrap.css');
 render(
   <Provider store={store}>
     <Router history={hashHistory}>
       <Route path= "/" component = {Main}>
+        <IndexRoute component={LandingPageContainer}/>
         <Route path="signup"component={SignUpContainer} >
           <Route path="property" component={Property}/>
           <Route path="tenant" component={Tenant}/>
@@ -57,6 +59,7 @@ render(
           <Route path="bankinfo" component={BankInfo}/>
           <Route path="signupsuccess" component={SignUpSuccess}/>
         </Route>
+
       </Route>
     </Router>
   </Provider>,

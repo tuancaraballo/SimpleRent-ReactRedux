@@ -15,7 +15,7 @@ const contactStyle = {
 
 
 
-var SignUpToolbar = React.createClass({
+var NavBar = React.createClass({
   render: function() {
     return (
       <nav className="navbar navbar-default navbar-fixed-top navigation-clean navBar-padding" >
@@ -31,7 +31,6 @@ var SignUpToolbar = React.createClass({
 
         <div className="collapse navbar-collapse" id="navcol-1">
           <ul className="nav navbar-nav navbar-right">
-            <li role="presentation"><a href="#" style={contactStyle}>Contact Us</a></li>
             <li className="dropdown">
               <a className="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"> </a>
               <ul className="dropdown-menu" role="menu">
@@ -47,4 +46,4 @@ var SignUpToolbar = React.createClass({
   }
 });
 
-module.exports =  SignUpToolbar;
+module.exports =  NavBar;

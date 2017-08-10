@@ -10,7 +10,7 @@ var {PropTypes} = require('react');
 // var actions = require('actions')  ;
 
 /* --- custom components --- */
-var SignUpToolbar = require('SignUpToolbar');
+var NavBar = require('NavBar');
 var Navigation = require('Navigation').default;
 
 
@@ -25,6 +25,7 @@ webfontloader.load({
 const css_styleBootstrap = require(__dirname + '/../styles/signupBootstrap.css');
 const css_style = require(__dirname + '/../styles/signup.css');
 
+//<NavBar/>
 class SignUpContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -33,7 +34,7 @@ class SignUpContainer extends React.Component {
   render() {
     return (
       <div>
-        <SignUpToolbar/>
+
         <div className="container">
           <div className= "row ">
             <div className="col-md-8 col-md-offset-1">

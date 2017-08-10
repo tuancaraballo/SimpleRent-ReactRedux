@@ -9,7 +9,7 @@ module.exports = {
   resolve: {
     alias: {
       Property: __dirname + '/app/components/signupflow/Property.jsx',
-      SignUpToolbar: __dirname +'/app/components/signupflow/SignUpToolbar.jsx',
+      NavBar: __dirname +'/app/components/signupflow/NavBar.jsx',
       Tenant: __dirname + '/app/components/signupflow/Tenant.jsx',
       Rent: __dirname + '/app/components/signupflow/Rent.jsx',
       BankInfo: __dirname + '/app/components/signupflow/BankInfo.jsx',
@@ -19,6 +19,7 @@ module.exports = {
       configureStore: __dirname + '/app/store/configureStore.jsx',
       Navigation: __dirname + '/app/components/signupflow/Navigation.jsx',
       SignUpContainer: __dirname + '/app/components/SignUpContainer.jsx',
+      LandingPageContainer : __dirname + '/app/components/LandingPageContainer.jsx',
       Main: __dirname + '/app/components/Main.jsx',
       App:  __dirname + '/app/app.jsx',
     },
