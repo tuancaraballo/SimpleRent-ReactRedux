@@ -1,7 +1,14 @@
+/*
+ * Description: Actions to be called for any interactiable feature
+ */
+
+ /* --- actions to be exported to reducers --- */
 export const ADD_PROPERTY = 'ADD_PROPERTY';
 export const ADD_STAGE = 'ADD_STAGE';
 export const UPDATE_CURRENT_STAGE = 'UPDATE_CURRENT_STAGE';
 
+
+/*** Action to add a new Property ***/
 export function addAddress(AddrObject){
   return {
     type: ADD_PROPERTY,
@@ -12,6 +19,7 @@ export function addAddress(AddrObject){
   };
 };
 
+/*** Actions to modify the stages navigation component ***/
 export function addStage(stage){
   return {
     type: ADD_STAGE,

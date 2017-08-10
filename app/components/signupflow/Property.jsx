@@ -14,23 +14,18 @@ var Property = React.createClass({
 	onFormSubmit: function (e) {
 		e.preventDefault();// this prevents the browse from refreshing the whole app.
 
-		console.log('--- onFormSubmit was triggered ----');
 		var info = {
 			"addr1" : this.refs.addr1.value,
 			"addr2" : this.refs.addr2.value,
 		}
-		console.log('--- property before calling dispatch --');
-		var {dispatch} = this.props;
-		console.log('---- after pulling dispatch --- ');
-		dispatch(actions.addAddress(info));
 
-		// if (this.refs.addr1.value.length > 0) {
-		// 	 //this.refs.addr1.value = ''; // --> TODO: add this if needed
-		// 	 this.props.onChange('property',info);
-		// 	 window.location.hash = '#/tenant';
-		// }else{
-		// 	alert('There are missing fields');
-		// }
+		if (this.refs.addr1.value.length > 0) {
+			 //this.refs.addr1.value = ''; // --> TODO: add this if needed
+			var {dispatch} = this.props;
+			dispatch(actions.addAddress(info));
+			dispatch(actions.addStage("tenant"));
+			window.location.hash = '#/signup/tenant'; //--> forward to the next form
+		}
 
 	},
 	render: function() {
@@ -59,28 +54,12 @@ var Property = React.createClass({
 	}
 });
 
-//export default Property;
-// Property.propTypes = {
-//
-// };
-//
-// // const mapStateToProps = (state) => {
-// //  return state;
-// // }
-//
-//
-export default connect()(Property);
-// const mapDispatchToProps = (dispatch) => {
-//  return {
-// 	 addAddress: addressObject => dispatch(addAddress(addressObject))
-//  }
-// }
-// export default withRouter(connect(mapDispatchToProps)(Property));
 // export default connect(
-//  mapDispatchToProps
-// )(Property);
-//
-// export default Property;
-
-/* -- it exports our redux-wired component and it connects your component to the actions -- */
-//export default connect(null, actions)(Property);
+//   (state) => {
+//     return {
+//       showCompleted: state.showCompleted,
+//       searchText: state.searchText
+//     }
+//   }
+// )(TodoSearch);
+export default connect()(Property);
