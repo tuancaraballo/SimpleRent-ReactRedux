@@ -23,7 +23,8 @@ var Property = React.createClass({
 			 //this.refs.addr1.value = ''; // --> TODO: add this if needed
 			var {dispatch} = this.props;
 			dispatch(actions.addAddress(info));
-			dispatch(actions.addStage("tenant"));
+			dispatch(actions.addStage("property"));
+			dispatch(actions.updateCurrentStage("tenant"));
 			window.location.hash = '#/signup/tenant'; //--> forward to the next form
 		}
 

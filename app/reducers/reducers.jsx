@@ -30,7 +30,6 @@ function propertyReducer(state = {}, action){
       // }
 function stagesReducer(state = {current_stage:'property', seen_stages: []}, action) {
   switch (action.type) {
-
     case UPDATE_CURRENT_STAGE:
       return {
         current_stage : action.stage

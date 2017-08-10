@@ -39,6 +39,7 @@ var currentCircle = {
 var Navigation = React.createClass({
   // --> handles the circle color
   handleCircleColor : (stage, seen_stages, current_stage) => {
+    console.log(stage,seen_stages,current_stage);
     if (seen_stages.indexOf(stage) > -1){ //-> if stage has already been seen
       return currentCircle              //- make it blue
     } else if (stage === current_stage){ // else if hasn't been seen but it's current

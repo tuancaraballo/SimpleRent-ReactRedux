@@ -52,10 +52,10 @@ render(
       <Route path= "/" component = {Main}>
         <Route path="signup"component={SignUpContainer} >
           <Route path="property" component={Property}/>
-            <Route path="tenant" component={Tenant}/>
-            <Route path="rent" component={Rent}/>
-            <Route path="bankinfo" component={BankInfo}/>
-            <Route path="signupsuccess" component={SignUpSuccess}/>
+          <Route path="tenant" component={Tenant}/>
+          <Route path="rent" component={Rent}/>
+          <Route path="bankinfo" component={BankInfo}/>
+          <Route path="signupsuccess" component={SignUpSuccess}/>
         </Route>
       </Route>
     </Router>
